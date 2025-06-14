@@ -1,0 +1,21 @@
+@use '../variables';
+
+@mixin toolbar($theme: 'default') {
+  background-color: if($theme =='dark', variables.$dark, variables.$gray-300);
+  padding: 6px;
+  border-radius: variables.$border-radius variables.$border-radius 0 0;
+
+  button {
+    margin-right: 6px;
+    background-color: transparent;
+    border: none;
+    border-radius: variables.$border-radius-sm;
+    font-size: variables.$font-size-base;
+    padding: 3px 7px;
+    color: if($theme =='dark', variables.$light, variables.$dark);
+
+    &.activeBtn {
+      background-color: if($theme =='dark', variables.$gray-900, variables.$gray-400);
+    }
+  }
+}
