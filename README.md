@@ -25,4 +25,4 @@ npm start
 The app will be available at http://localhost:3000.
 
 ## Live Demo
-https://wysiwyg-editor-8zpqy5y3v-omnia-yahias-projects.vercel.app/
+https://wysiwyg-editor-nu.vercel.app
