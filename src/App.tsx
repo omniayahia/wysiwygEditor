@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="container">
       <h2>Controlled Editor</h2>
+      <p>Controlled editor with style props</p>
       <WysiwygEditor
         value={editorState}
         onChange={setEditorState}
@@ -20,6 +21,7 @@ function App() {
         }}
       />
       <h2>Uncontrolled Editor</h2>
+      <p>Uncontrolled editor with style and className props to change the editor theme</p>
       <WysiwygEditor
         className='darkEditor'
         style={{
@@ -28,6 +30,7 @@ function App() {
         }}
       />
       <h2>Custom Toolbar</h2>
+      <p>Controlled editor with custom toolbar</p>
       <WysiwygEditor
         value={customToolbarEditorState}
         onChange={setCustomToolbarEditorState}

@@ -10,6 +10,9 @@ A rich text WYSIWYG editor built with React and TypeScript using draft-js.
 Follow these steps to run the project locally:
 
 1. Clone the project
+```shell
+git clone git@github.com:omniayahia/wysiwygEditor.git
+```
 2. Install dependencies
 ```shell
 npm install
@@ -20,3 +23,6 @@ npm start
 ```
 
 The app will be available at http://localhost:3000.
+
+## Live Demo
+https://wysiwyg-editor-8zpqy5y3v-omnia-yahias-projects.vercel.app/
