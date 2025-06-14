@@ -1,0 +1,27 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins/toolbar";
+
+.editorContainer {
+  border: variables.$border;
+  border-radius: variables.$border-radius;
+}
+
+:global(.public-DraftEditor-content) {
+  min-height: 200px;
+  padding: 10px;
+}
+
+.toolbar {
+  @include toolbar.toolbar();
+}
+
+:global(.darkEditor) {
+  &.editorContainer {
+    background-color: variables.$gray-800;
+    color: variables.$light;
+  }
+
+  .toolbar {
+    @include toolbar.toolbar('dark');
+  }
+}

@@ -1,24 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { EditorState } from 'draft-js';
+import './assets/styles/main.scss';
+import WysiwygEditor from './components/shared/WysiwygEditor/WysiwygEditor';
+import CustomToolbar from './components/CustomToolbar/CustomToolbar';
 
 function App() {
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [customToolbarEditorState, setCustomToolbarEditorState] = useState(EditorState.createEmpty());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h2>Controlled Editor</h2>
+      <p>Controlled editor with style props</p>
+      <WysiwygEditor
+        value={editorState}
+        onChange={setEditorState}
+        style={{
+          marginBottom: '50px',
+          minHeight: '300px'
+        }}
+      />
+      <h2>Uncontrolled Editor</h2>
+      <p>Uncontrolled editor with style and className props to change the editor theme</p>
+      <WysiwygEditor
+        className='darkEditor'
+        style={{
+          marginBottom: '50px',
+          minHeight: '300px'
+        }}
+      />
+      <h2>Custom Toolbar</h2>
+      <p>Controlled editor with custom toolbar</p>
+      <WysiwygEditor
+        value={customToolbarEditorState}
+        onChange={setCustomToolbarEditorState}
+        renderToolbar={({ editorState, onBlockToggle }) => (
+          <CustomToolbar
+            editorState={editorState!}
+            onBlockToggle={onBlockToggle}
+          />
+        )}
+        style={{
+          marginBottom: '50px',
+        }}
+      />
     </div>
   );
 }
